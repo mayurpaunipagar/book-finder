@@ -5,7 +5,15 @@
 
 window.addEventListener('load', () => {
     console.log("loaded content");
-    fetchBookList("buddha");
+    document.getElementById("keyword").addEventListener("keyup",
+        (event)=> {
+          if (event.keyCode === 13) {
+              let searchString = document.getElementById("keyword").value;
+              if (searchString) {
+                fetchBookList(searchString)
+              }
+          }
+        });
     
 })
 
