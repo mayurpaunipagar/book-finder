@@ -5,7 +5,7 @@
 
 window.addEventListener('load', () => {
     console.log("loaded content");
-    fetchBookList("react");
+    fetchBookList("buddha");
     
 })
 

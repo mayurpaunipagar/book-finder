@@ -8,213 +8,46 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" rel="stylesheet">
+  <link href="./index.css" rel="stylesheet">
   <script src="bundle.js"></script>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-        background-color: black;
-    }
-
-    body, html {
-      font-family: 'Noto Serif SC', serif;
-      color: black;
-      background-color: #999;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    #header {
-      padding: 1em;
-      background-color: #222;
-      color: white;
-      text-align: center;
-    }
-
-    #header h1 {
-      margin: 0;
-      padding: 0;
-    }
-
-    #header p {
-      color: white;
-    }
-
-    .container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.align-items-start {
-    align-items: flex-start !important;
-}
-.justify-content-start {
-    justify-content: flex-start !important;
-}
-
-.justify-content-around {
-    justify-content: space-around !important;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col-12 {
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-@media screen and (min-width: 576px) {
-    .col-sm-12 {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    .container {
-        max-width: 540px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .col-md-6 {
-        -ms-flex: 0 0 50%;
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    .container {
-        max-width: 720px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .col-lg-3 {
-        -ms-flex: 0 0 25%;
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-    .container {
-        max-width: 960px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
-    }
-}
-
-.search-container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.search-input {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    margin-bottom: 50px;
-}
-
-.hero-page1 {
-    background-position: contain;
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: fill;
-    height: 100vh;
-    width: 100%;
-}
-
-.book-display {
-    font-size: 20px;
-    /* min-height: 50vh; */
-    min-height: 400px;
-    border: 1px solid #0f0f0f;
-    margin-right: 5px;
-    margin-top: 20px;
-    padding: 10px;
-    box-shadow: 0 6px 6px #e6e6e6;
-
-    position: relative;
-    width: 30%;
-}
-.book-display .image {
-    width: 100%;
-    padding: 10px;
-    cursor: pointer;
-    height: 30vh;
-}
-.book-display .image img {
-    width: 100%;
-    object-fit: fill;
-    height: 25vh;
-}
-.book-display .details a {
-    margin-right: 100px;
-    color: #006eff;
-    cursor: pointer;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.book-display .previewLink {
-  position: absolute;
-  bottom:10px;
-  right:0;
-}
-
-  </style>
 </head>
 <body>
 <!-- Add your site or application content here -->
   <header id="header">
     <h1>Book Finder</h1>
   </header>
-  <div class="col-12 ">
-    <div id="book-list" class="row justify-content-around"></div>
-        <!--
-            <div class="col-lg-3 col-md-6 col-sm-12 book-display">
-                <div class="image">
-                <img src="book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail" alt="book.volumeInfo.title" />
-                </div>
-                <div>
-                <span> Authors: book.volumeInfo.authors</span>
-                </div>
-                <div class="details">
-                <span>Title: book.volumeInfo.title
-                </span>
-                <a target="_blank" class="previewLink" href="${book.volumeInfo.previewLink}">Preview</a>
-                </div>
-            </div>
-        -->
-    </div>
+  <div class="container">
+    <div class="row justify-content-start align-items-start">
+        <div class="search-container">
+            <input
+                class="search-input"
+                type="search"
+                id="keyword"
+                placeholder="Search favourite books"
+                autocomplete="off"
+            />
+        </div>
+
+        <div class="col-12 ">
+          <div id="book-list" class="row justify-content-around"></div>
+              <!--
+                  <div class="col-lg-3 col-md-6 col-sm-12 book-display">
+                      <div class="image">
+                      <img src="book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail" alt="book.volumeInfo.title" />
+                      </div>
+                      <div>
+                      <span> Authors: book.volumeInfo.authors</span>
+                      </div>
+                      <div class="details">
+                      <span>Title: book.volumeInfo.title
+                      </span>
+                      <a target="_blank" class="previewLink" href="${book.volumeInfo.previewLink}">Preview</a>
+                      </div>
+                  </div>
+              -->
+        </div>
+      </div>
+  </div>
+        
 </body>
 </html>
