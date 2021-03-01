@@ -1,6 +1,6 @@
-# Create Vanilla JS App 🌴🌴🌴
+# Book Finder App 🌴🌴🌴
 
-# A very simple vanilla js boilerplate
+# A very simple book finder using google books api
 
 - Includes webpack HMR
 - Webpack 4
@@ -15,17 +15,12 @@ Install deps from project root `yarn` or `npm i`
 
 ### Start development server with:
 
-`yarn start:dev` or `npm run start:dev`
+`yarn start` or `npm run start`
 
 It's possible to use a different port by specifying this first like so: 
 
-`CVA_PORT=7788 yarn start:dev` to start with port 7788. Same for npm just include `CVA_PORT=7788` at the beginning.
+`CVA_PORT=7788 yarn start` to start with port 7788. Same for npm just include `CVA_PORT=7788` at the beginning.
 
 ### Build for production
 
 `yarn build` or `npm run build`
-
-### Ways you may add to this
-
-+ Add jsx and react - Or just use create react app instead!
-+ Add a .env for project specific environment values
