@@ -24,3 +24,6 @@ It's possible to use a different port by specifying this first like so:
 ### Build for production
 
 `yarn build` or `npm run build`
+
+### Once website loads
+1) type any keyword and hit enter
